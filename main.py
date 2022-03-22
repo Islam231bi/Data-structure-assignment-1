@@ -9,12 +9,14 @@ from QuickSort import QuickSort
 from inersionSort import insertionSort
 from selectionSort import SelectionSort
 
+
+# Execution time samples for each algorithm
 time_samples_merge = []
 time_samples_quick = []
 time_samples_insertion = []
 time_samples_selection = []
 
-"""Generating the array samples with different sizes"""
+# Generating the array samples with different sizes
 list_samples = []
 list_samples_x = [1000, 10000, 25000, 50000, 75000, 100000]
 gen = Generate()
@@ -34,37 +36,37 @@ list_samples.append(list_100000)
 """testing different sorting algorithms with the generated samples array"""
 
 # testing merge sort
-for array in list_samples:
-    sort = MergeSort(array)
-    start = time.time()
-    sort.m_sort()
-    end = time.time()
-    time_samples_merge.append((end - start) * 1000000)
-    print("Running time for merge sort with size\t" + str(len(array)) + " is:\t" + str(end - start) + "sec\t", sep="\n")
-
-print("\n")
-
-# testing quick sort
-for array in list_samples:
-    sort = QuickSort(array)
-    start = time.time()
-    sort.quickSort(0, len(array) - 1, random.randrange(0, len(array) - 1))
-    end = time.time()
-    time_samples_merge.append((end - start) * 1000000)
-    print("Running time for Quick sort with size\t" + str(len(array)) + " is:\t" + str(end - start) + "sec\t", sep="\n")
-
-print("\n")
-
 # for array in list_samples:
-#     sort = SelectionSort(array)
+#     sort = MergeSort(array)
 #     start = time.time()
-#     sort.sort()
+#     sort.m_sort()
 #     end = time.time()
-#     time_samples_selection.append((end - start) * 1000000)
-#     print("Running time for Selection sort with size\t" + str(len(array)) + " is:\t" + str(end - start) + "sec\t", sep="\n")
+#     time_samples_merge.append((end - start) * 1000000)
+#     print("Running time for merge sort with size\t" + str(len(array)) + " is:\t" + str(end - start) + "sec\t", sep="\n")
 #
 # print("\n")
+
+# testing quick sort
+# for array in list_samples:
+#     sort = QuickSort(array)
+#     start = time.time()
+#     sort.quickSort(0, len(array) - 1, random.randrange(0, len(array) - 1))
+#     end = time.time()
+#     time_samples_quick.append((end - start) * 1000000)
+#     print("Running time for Quick sort with size\t" + str(len(array)) + " is:\t" + str(end - start) + "sec\t", sep="\n")
 #
+# print("\n")
+
+for array in list_samples:
+    sort = SelectionSort(array)
+    start = time.time()
+    sort.sort()
+    end = time.time()
+    time_samples_selection.append((end - start) * 1000000)
+    print("Running time for Selection sort with size\t" + str(len(array)) + " is:\t" + str(end - start) + "sec\t", sep="\n")
+
+print("\n")
+
 # for array in list_samples:
 #     sort = insertionSort(array)
 #     start = time.time()
@@ -75,9 +77,12 @@ print("\n")
 #
 # print("\n")
 
+# # Graphing algorithms execution time with input
 graph = Grapher()
-graph.graph(list_samples_x, time_samples_merge, "Merge Sort")
-# graph.graph(list_samples_x, time_samples_selection, "Selection Sort")
+# graph.graph(list_samples_x, time_samples_merge, "Merge Sort")
+# graph.graph(list_samples_x, time_samples_quick, "Quick Sort")
+graph.graph(list_samples_x, time_samples_selection, "Selection Sort")
 # graph.graph(list_samples_x, time_samples_insertion, "Insertion Sort")
-graph.graph(list_samples_x, time_samples_quick, "Quick Sort")
 graph.plotting()
+
+

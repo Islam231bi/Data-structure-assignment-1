@@ -10,8 +10,6 @@ class insertionSort:
     def __init__(self, array):
         self.array = array
         self.size = len(self.array)
-        self.sort()
-        self.displayResult()
 
     def sort(self):
         for i in range(1, self.size):
