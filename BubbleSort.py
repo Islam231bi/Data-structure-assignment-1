@@ -14,7 +14,6 @@ class BubbleSort:
         self.swaps = 0
 
     def sort(self):
-
         for i in range(self.size):
             flag = False
             self.passes += 1
