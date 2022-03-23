@@ -1,8 +1,15 @@
-from GenerateArray import Generate
+from Grapher import Grapher
 
-gen = Generate()
-list_samples_quick = [gen.generate(1000), gen.generate(10000), gen.generate(25000), gen.generate(50000),
-                      gen.generate(75000), gen.generate(100000)]
-list_samples_merge = list_samples_quick[:]
-list_samples_insertion = list_samples_quick[:]
-list_samples_bubble = list_samples_quick[:]
+graph = Grapher()
+x = [1, 2, 3, 4]
+y = [2, 4, 6, 8]
+y2 = [1,3,4,5]
+y3 = [213,23,323,32]
+y4 = [321,12,321,0]
+y5 =[212,23,11,11]
+graph.graph(x, y, "test")
+graph.graph(x, y2, "test")
+graph.graph(x, y3, "test")
+graph.graph(x, y4, "test")
+graph.graph(x, y5, "test")
+graph.plotting()

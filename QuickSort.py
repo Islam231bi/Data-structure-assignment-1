@@ -32,3 +32,6 @@ class QuickSort:
                     sum += 1
         return self.list1[K - 1 + sum]
 
+
+
+
