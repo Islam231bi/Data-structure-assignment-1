@@ -10,7 +10,7 @@ class Grapher:
 
     def plotting(self):
         plt.xlabel("Number of elements")
-        plt.ylabel("Execution time (Microseconds)")
+        plt.ylabel("Execution time (Milliseconds)")
         plt.title("sorting algorithms execution time")
         plt.legend()
         plt.show()

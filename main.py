@@ -23,9 +23,9 @@ time_samples_bubble = []
 # Generating the array samples with different sizes
 
 
-list_samples_x = [100, 1000, 10000, 15000, 20000]
+list_samples_x = [1000, 10000, 25000, 50000, 75000, 100000]
 gen = Generate()
-list_samples_quick = [gen.generate(100), gen.generate(1000), gen.generate(10000), gen.generate(15000), gen.generate(20000)]
+list_samples_quick = [gen.generate(1000), gen.generate(10000), gen.generate(25000), gen.generate(50000), gen.generate(75000), gen.generate(100000)]
 # copying the same generated array to be used in the other sorting algorithms using deepcopy function in copy library
 # we can not use normal (=) sign here as it will affect the original list
 list_samples_merge = copy.deepcopy(list_samples_quick)
@@ -41,7 +41,7 @@ for array in list_samples_quick:
     start = time.time()
     sort.quickSort(0, len(array) - 1, random.randrange(0, len(array) - 1))
     end = time.time()
-    time_samples_quick.append((end - start))
+    time_samples_quick.append((end - start) * 1000)
     print("Running time for Quick sort with size\t" + str(len(array)) + " is:\t" + str(end - start) + " sec\t",
           sep="\n")
 print("\n")
@@ -52,7 +52,7 @@ for array in list_samples_merge:
     start = time.time()
     sort.m_sort()
     end = time.time()
-    time_samples_merge.append((end - start))
+    time_samples_merge.append((end - start) * 1000)
     print("Running time for merge sort with size\t" + str(len(array)) + " is:\t" + str(end - start) + " sec\t",
           sep="\n")
 print("\n")
@@ -62,7 +62,7 @@ for array in list_samples_insertion:
     start = time.time()
     sort.sort()
     end = time.time()
-    time_samples_insertion.append((end - start))
+    time_samples_insertion.append((end - start) * 1000)
     print("Running time for insertion sort with size\t" + str(len(array)) + " is:\t" + str(end - start) + " sec\t",
           sep="\n")
 print("\n")
@@ -82,7 +82,7 @@ for array in list_samples_selection:
     start = time.time()
     sort.sort()
     end = time.time()
-    time_samples_selection.append((end - start))
+    time_samples_selection.append((end - start) * 1000)
     print("Running time for Selection sort with size\t" + str(len(array)) + " is:\t" + str(end - start) + " sec\t",
           sep="\n")
 print("\n")
