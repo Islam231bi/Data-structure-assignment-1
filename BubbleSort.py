@@ -27,6 +27,3 @@ class BubbleSort:
 
     def displayResult(self):
         print("Sorted list: " + str(self.array), sep="\n")
-        # number of passes: N-1
-        print("Passes count: " + str(self.passes), sep="\n")
-        print("Swaps count: " + str(self.swaps), sep="\n")

@@ -37,5 +37,8 @@ class MergeSort:
                 j += 1
                 k += 1
 
+    def displayResult(self):
+        print("Sorted list: " + str(self.array), sep="\n")
+
 
 
