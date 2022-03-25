@@ -37,13 +37,16 @@ array = [3, 1, 10, 5, 6, 7, 2, 11, 16]
 sort = HybridMergeSort(array, 4)
 
 print("Using quick sort: ", sep="\n")
-array = [3, 1, 10, 5, 6, 7, 2, 11, 16]
-sort = QuickSort(array)
-sort.quickSort(0, len(array)-1, random.randrange(0, len(array)-1))
-sort.displayResult()
+array = [3, 3, 2, 1, 1, 0, 10, -2, -2, -11, 1, 19, -9, 0, 0, 10, 100, 20]
+sort = QuickSort()
+sort.rando(array)
+sort.quickSort(array, 0, len(array) - 1)
+sort.displayResult(array)
 
-
-
-
-
-
+print("Testing finding kth smallest element", sep="\n")
+array = [3, 5, 6, 1, 2, 10]
+sort = QuickSort()
+new_array = sort.remove_duplicate(array)
+sort.rando(new_array)
+res = sort.kthSmallest(new_array, 0, len(new_array) - 1, 6)
+print(res)
