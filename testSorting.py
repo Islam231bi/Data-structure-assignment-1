@@ -48,5 +48,6 @@ array = [3, 5, 6, 1, 2, 10]
 sort = QuickSort()
 new_array = sort.remove_duplicate(array)
 sort.rando(new_array)
-res = sort.kthSmallest(new_array, 0, len(new_array) - 1, 6)
+# k should be smaller than or equal to the number of distinct elements in the array
+res = sort.kthSmallest(new_array, 0, len(new_array) - 1, 7)
 print(res)
