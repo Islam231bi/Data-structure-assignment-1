@@ -37,9 +37,10 @@ list_samples_selection = copy.deepcopy(list_samples_quick)
 
 # testing quick sort
 for array in list_samples_quick:
-    sort = QuickSort(array)
+    sort = QuickSort()
     start = time.time()
-    sort.quickSort(0, len(array) - 1, random.randrange(0, len(array) - 1))
+    sort.rando(array)
+    sort.quickSort(array, 0, len(array) - 1)
     end = time.time()
     time_samples_quick.append((end - start) * 1000)
     print("Running time for Quick sort with size\t" + str(len(array)) + " is:\t" + str(end - start) + " sec\t",
